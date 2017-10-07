@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Maurice Domínguez",
+      "authorEmail": "maurice.ronet.dominguez@gmail.com",
+      "authorUrl": "https://github.com/madoos"
+    }
+  }
+}
