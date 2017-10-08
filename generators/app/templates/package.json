@@ -34,11 +34,14 @@
     "serve:coverage": "http-server test/reports/coverage/ -o",
     "serve:linter": "http-server test/report/linter -o"
   },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
+  },
   "repository": {
     "type": "git",
     "url": "git+<%= gitrepository %>"
   },
-  "keywords": ["v"],
   "author": {
     "name": "<%= author %>",
     "email": "<%= email %>",

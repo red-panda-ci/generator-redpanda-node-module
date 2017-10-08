@@ -25,11 +25,13 @@
     "eslint-config-prettier": "^2.4.0",
     "eslint-config-xo": "^0.18.2",
     "eslint-plugin-prettier": "^2.2.0",
+    "http-server": "^0.10.0",
     "husky": "^0.14.3",
     "jest": "^21.0.0",
     "jest-cli": "^21.0.0",
     "lint-staged": "^4.2.1",
     "nsp": "^2.6.3",
+    "nyc": "^11.2.1",
     "prettier": "^1.7.0",
     "standard": "^10.0.3",
     "validate-commit": "^3.2.1",
@@ -43,6 +45,7 @@
     "git-user-name": "^1.2.0",
     "github": "^11.0.0",
     "ramda": "^0.24.1",
+    "split-keywords": "^2.0.1",
     "yeoman-generator": "^1.0.0",
     "yosay": "^2.0.0"
   },
@@ -51,10 +54,13 @@
   },
   "scripts": {
     "commitmsg": "validate-commit-msg -p eslint",
+    "cover":
+      "nyc  --reporter=lcov --report-dir=__tests__/reports/coverage --temp-directory=__tests__/reports/coverage npm test",
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "serve:coverage": "http-server __tests__/reports/coverage/ -o"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],

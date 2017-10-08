@@ -7,6 +7,7 @@ const { join } = require('path')
 const prompts = require('./prompts')
 const { createGithubRepo } = require('./utils')
 const { execSync } = require('child_process')
+// const splitKeywords = require('split-keywords')
 
 module.exports = class extends Generator {
   constructor (...args) {
@@ -37,15 +38,14 @@ module.exports = class extends Generator {
     }
 
     this.syncRemoteRepo = function () {
-      execSync(`git commit -m 'New: Initial commit'`)
+      execSync(`git commit --no-verify -m 'New: Initial commit'`)
+      execSync('git branch -m develop')
       execSync(`git push origin develop`)
-      execSync(`git push origin master`)
       return this
     }
 
     this.createGitFlow = function () {
       execSync('git init')
-      execSync('git checkout -b develop')
       return this
     }
 
@@ -59,6 +59,7 @@ module.exports = class extends Generator {
     this.log(yosay(`Welcome to the beautiful ${chalk.red('generator-redpanda-node-module')} generator!`))
 
     return this.prompt(prompts(this)).then(props => {
+     // props.keywords = splitKeywords(props.keywords)
       this.props = props
     })
   }

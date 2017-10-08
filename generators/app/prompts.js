@@ -107,12 +107,12 @@ module.exports = function prompts (yeoman) {
       message: 'Email',
       default: email(),
       validate: checkEmpty
-    },
+    }/* ,
     {
       type: 'input',
       name: 'keywords',
       message: 'Keyword separated by coma',
       validate: checkEmpty
-    }
+    } */
   ]
 }
