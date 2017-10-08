@@ -31,11 +31,11 @@ yo generator-redpanda-node-module
 MIT © [red-panda-ci](https://github.com/red-panda-ci)
 
 
-[npm-image]: https://badge.fury.io/js/generator-node-module-2.svg
-[npm-url]: https://npmjs.org/package/generator-node-module-2
-[travis-image]: https://travis-ci.org/madoos/generator-node-module-2.svg?branch=master
-[travis-url]: https://travis-ci.org/madoos/generator-node-module-2
-[daviddm-image]: https://david-dm.org/madoos/generator-node-module-2.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/madoos/generator-node-module-2
-[coveralls-image]: https://coveralls.io/repos/madoos/generator-node-module-2/badge.svg
-[coveralls-url]: https://coveralls.io/r/madoos/generator-node-module-2
+[npm-image]: https://badge.fury.io/js/generator-redpanda-node-module.svg
+[npm-url]: https://npmjs.org/package/generator-redpanda-node-module
+[travis-image]: https://travis-ci.org/madoos/generator-redpanda-node-module.svg?branch=master
+[travis-url]: https://travis-ci.org/madoos/generator-redpanda-node-module
+[daviddm-image]: https://david-dm.org/madoos/generator-redpanda-node-module.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/madoos/generator-redpanda-node-module
+[coveralls-image]: https://coveralls.io/repos/madoos/generator-redpanda-node-module/badge.svg
+[coveralls-url]: https://coveralls.io/r/madoos/generator-redpanda-node-module
