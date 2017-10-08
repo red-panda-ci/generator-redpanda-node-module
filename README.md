@@ -1,31 +1,34 @@
-# generator-node-module-2 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+
+# generator-redpanda-node-module
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-node-module-2 using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-redpanda-node-module using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-node-module-2
+npm install -g generator-redpanda-node-module
 ```
 
 Then generate your new project:
 
 ```bash
-yo node-module-2
+yo generator-redpanda-node-module
 ```
+## Features
 
-## Getting To Know Yeoman
-
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+* Commit validation
+* Linter standard style 
+* mocha test
+* nyc code coverage
+* Jenkins integration
+* Travis integration
+* Github repo synchronization
 
 ## License
 
-MIT © [Maurice Domínguez](https://github.com/madoos)
+MIT © [red-panda-ci](https://github.com/red-panda-ci)
 
 
 [npm-image]: https://badge.fury.io/js/generator-node-module-2.svg

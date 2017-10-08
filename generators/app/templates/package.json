@@ -27,7 +27,7 @@
     "lint": "eslint */**/*.js -f html -o ./test/reports/linter/index.html",
     "test": "node test/index.js",
     "cover":
-      "nyc  --reporter=lcov --report-dir=test/reports/coverage --temp-directory=test/reports/coverage npm test",
+      "nyc --reporter=lcov --report-dir=test/reports/coverage --temp-directory=test/reports/coverage npm test",
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",

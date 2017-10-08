@@ -55,7 +55,7 @@
   "scripts": {
     "commitmsg": "validate-commit-msg -p eslint",
     "cover":
-      "nyc  --reporter=lcov --report-dir=__tests__/reports/coverage --temp-directory=__tests__/reports/coverage npm test",
+      "nyc --reporter=lcov --report-dir=__tests__/reports/coverage --temp-directory=__tests__/reports/coverage npm test",
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
