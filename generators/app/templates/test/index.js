@@ -4,7 +4,7 @@ const Mocha = require('mocha')
 const mocha = new Mocha({ timeout: 3000 })
 
 const suite = [
-    'dummy.js'
+    __dirname + '/dummy.js'
 ]
 
 suite

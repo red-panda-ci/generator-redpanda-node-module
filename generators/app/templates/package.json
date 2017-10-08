@@ -7,7 +7,7 @@
     "module-alias": "^2.0.1"
   },
   "devDependencies": {
-    "chai": "^4.2.1",
+    "chai": "^4.1.2",
     "coveralls": "^2.13.1",
     "eslint-config-prettier": "^2.4.0",
     "eslint-config-xo": "^0.18.2",
@@ -15,7 +15,7 @@
     "http-server": "^0.9.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.2.1",
-    "mocha": "^4.1.0",
+    "mocha": "^4.0.1",
     "nyc": "^11.0.2",
     "nsp": "^2.6.3",
     "prettier": "^1.7.0",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "commitmsg": "validate-commit-msg -p eslint",
-    "lint": "eslint */**/*.js -f html -o ./test/report/linter/index.html",
+    "lint": "eslint */**/*.js -f html -o ./test/reports/linter/index.html",
     "test": "node test/index.js",
     "cover":
       "nyc  --reporter=lcov --report-dir=test/reports/coverage --temp-directory=test/reports/coverage npm test",
@@ -32,17 +32,17 @@
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "serve:coverage": "http-server test/reports/coverage/ -o",
-    "serve:linter": "http-server test/report/linter"
+    "serve:linter": "http-server test/report/linter -o"
   },
   "repository": {
     "type": "git",
     "url": "git+<%= gitrepository %>"
   },
-  "keywords": ["<%= keywords %>"],
+  "keywords": ["v"],
   "author": {
     "name": "<%= author %>",
     "email": "<%= email %>",
-    "url": "<%= url %>"
+    "url": "<%= ownerurl %>"
   },
   "license": "MIT",
   "bugs": {
