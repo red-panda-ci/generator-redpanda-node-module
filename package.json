@@ -44,6 +44,7 @@
     "git-user-email": "^0.2.2",
     "git-user-name": "^1.2.0",
     "github": "^11.0.0",
+    "interface": "^1.2.1",
     "ramda": "^0.24.1",
     "split-keywords": "^2.0.1",
     "yeoman-generator": "^1.0.0",

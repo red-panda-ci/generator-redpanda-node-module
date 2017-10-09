@@ -5,53 +5,35 @@ const yosay = require('yosay')
 const { readdirSync } = require('fs')
 const { join } = require('path')
 const prompts = require('./prompts')
-const { createGithubRepo } = require('./utils')
-const { execSync } = require('child_process')
-// const splitKeywords = require('split-keywords')
+const createGitManager = require('./gitManager')
 
-module.exports = class extends Generator {
+module.exports = class GeneratorNodeRedPanda extends Generator {
   constructor (...args) {
     super(...args)
-    this.githubRepo = null
+    this.gitManager = null
+    this.remoteRepo = null
+    this.createGitManager = createGitManager
 
-    this.createGithubRepo = function () {
-      const { githubUser, githubPass, githubToken, name } = this.props
+    this.getAuthentication = function () {
+      const { githubUser, githubPass, githubToken } = this.props
+      return (this.props.githubAuthType === 'user and password')
+             ? {type: 'basic', username: githubUser, password: githubPass}
+             : {type: 'oauth', token: githubToken}
+    }
+
+    this.createRemoteRepo = function () {
+      const { name } = this.props
       const done = this.async()
 
-      const auth = this.props.githubAuthType === 'user and password'
-                    ? {type: 'basic', username: githubUser, password: githubPass}
-                    : {type: 'oauth', token: githubToken}
-
-      createGithubRepo(auth, {name})
+      this.gitManager
+      .createRepo({name})
       .then((data) => {
-        this.githubRepo = data
+        this.remoteRepo = data
         this.props.gitrepository = data.html_url
         this.props.ownerurl = data.owner.html_url
         done(null, data)
       })
       .catch(done)
-    }
-
-    this.addRemoteRepo = function () {
-      execSync(`git remote add origin ${this.githubRepo.ssh_url}`)
-      return this
-    }
-
-    this.syncRemoteRepo = function () {
-      execSync(`git commit --no-verify -m 'New: Initial commit'`)
-      execSync('git branch -m develop')
-      execSync(`git push origin develop`)
-      return this
-    }
-
-    this.createGitFlow = function () {
-      execSync('git init')
-      return this
-    }
-
-    this.pushToDevelop = function () {
-      execSync('git push origin develop')
-      return this
     }
   }
 
@@ -59,17 +41,19 @@ module.exports = class extends Generator {
     this.log(yosay(`Welcome to the beautiful ${chalk.red('generator-redpanda-node-module')} generator!`))
 
     return this.prompt(prompts(this)).then(props => {
-     // props.keywords = splitKeywords(props.keywords)
       this.props = props
     })
   }
 
   runBefore () {
-    (this.props.isNewGithubRepo) && this.createGithubRepo()
+    this.gitManager = (this.props.isNewGithubRepo)
+                      ? this.createGitManager('github', this.getAuthentication)
+                      : this.createGitManager()
   }
 
   runAfter () {
-    this.createGitFlow()
+    if (this.props.isNewGithubRepo) this.createRemoteRepo()
+    this.gitManager.initSync()
   }
 
   writing () {
@@ -88,12 +72,12 @@ module.exports = class extends Generator {
 
   end () {
     try {
-      execSync('git add --ignore-errors * .*[a-zA-Z0-9]')
+      this.gitManager.addSync('* .*[a-zA-Z0-9]')
     } catch (err) {
       console.log(err.message)
     }
 
-    if (this.props.isNewGithubRepo) this.addRemoteRepo()
-    if (this.props.syncGithubRepo) this.syncRemoteRepo()
+    if (this.props.isNewGithubRepo) this.gitManager.remoteAddSync(this.remoteRepo.ssh_url)
+    if (this.props.syncGithubRepo) this.gitManager.createAndPushDevelopSync('New: Initial commit')
   }
 }
