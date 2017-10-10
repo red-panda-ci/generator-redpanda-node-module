@@ -7,13 +7,13 @@ describe('generator-redpanda-node-module:app', () => {
   beforeAll(() => {
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
-        isNewGithubRepo: false,
-        gitrepository: 'https://some-git-repo',
-        ownerurl: 'https://some-owner-url',
         name: 'test-app',
         description: 'Some description',
-        Author: 'Author',
-        email: 'email@email.es'
+        author: 'Author',
+        email: 'email@email.es',
+        hasRemoteRepo: false,
+        gitrepository: 'https://some-git-repo',
+        ownerurl: 'https://some-owner-url'
       })
   })
 

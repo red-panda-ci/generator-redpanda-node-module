@@ -36,7 +36,8 @@
     "standard": "^10.0.3",
     "validate-commit": "^3.2.1",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.6.0"
+    "yeoman-test": "^1.6.0",
+    "yo": "^2.0.0"
   },
   "dependencies": {
     "chalk": "^1.1.3",

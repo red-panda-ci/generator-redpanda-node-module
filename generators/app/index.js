@@ -15,10 +15,10 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
     this.createGitManager = createGitManager
 
     this.getAuthentication = function () {
-      const { githubUser, githubPass, githubToken } = this.props
-      return (this.props.githubAuthType === 'user and password')
-             ? {type: 'basic', username: githubUser, password: githubPass}
-             : {type: 'oauth', token: githubToken}
+      const { gitUser, gitPass, gitToken } = this.props
+      return (this.props.githubAuthType === 'USER_AND_PASSWORD')
+             ? {type: 'basic', username: gitUser, password: gitPass}
+             : {type: 'oauth', token: gitToken}
     }
 
     this.createRemoteRepo = function () {
@@ -27,11 +27,12 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
       this.gitManager
       .createRepo({name})
-      .then((data) => {
-        this.remoteRepo = data
-        this.props.gitrepository = data.html_url
-        this.props.ownerurl = data.owner.html_url
-        done(null, data)
+      .then((remoteRepo) => {
+        this.remoteRepo = remoteRepo
+        this.props.gitrepository = remoteRepo.htmlUrl
+        this.props.ownerurl = remoteRepo.ownerUrl
+        this.props.sshUrl = remoteRepo.sshUrl
+        done(null, remoteRepo)
       })
       .catch(done)
     }
@@ -46,13 +47,13 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
   }
 
   runBefore () {
-    this.gitManager = (this.props.isNewGithubRepo)
-                      ? this.createGitManager('github', this.getAuthentication)
+    this.gitManager = (this.props.hasRemoteRepo)
+                      ? this.createGitManager('GITHUB', this.getAuthentication)
                       : this.createGitManager()
   }
 
   runAfter () {
-    if (this.props.isNewGithubRepo) this.createRemoteRepo()
+    if (this.props.hasRemoteRepo) this.createRemoteRepo()
     this.gitManager.initSync()
   }
 
@@ -77,7 +78,7 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
       console.log(err.message)
     }
 
-    if (this.props.isNewGithubRepo) this.gitManager.remoteAddSync(this.remoteRepo.ssh_url)
-    if (this.props.syncGithubRepo) this.gitManager.createAndPushDevelopSync('New: Initial commit')
+    if (this.props.hasRemoteRepo) this.gitManager.remoteAddSync(this.remoteRepo.sshUrl)
+    if (this.props.SyncRemoteRepo) this.gitManager.createAndPushDevelopSync('New: Initial commit')
   }
 }
