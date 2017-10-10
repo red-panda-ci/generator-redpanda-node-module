@@ -22,11 +22,14 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
     }
 
     this.createRemoteRepo = function () {
-      const { name } = this.props
+      const { name, gitOrganization } = this.props
       const done = this.async()
 
       this.gitManager
-      .createRepo({name})
+      .createRepo({
+        name,
+        org: gitOrganization
+      })
       .then((remoteRepo) => {
         this.remoteRepo = remoteRepo
         this.props.gitrepository = remoteRepo.htmlUrl
@@ -48,13 +51,13 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
   runBefore () {
     this.gitManager = (this.props.hasRemoteRepo)
-                      ? this.createGitManager('GITHUB', this.getAuthentication)
+                      ? this.createGitManager('GITHUB', this.getAuthentication())
                       : this.createGitManager()
   }
 
   runAfter () {
     if (this.props.hasRemoteRepo) this.createRemoteRepo()
-    this.gitManager.initSync()
+   // this.gitManager.initSync() // init in runAfter for register npm hooks
   }
 
   writing () {

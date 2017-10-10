@@ -16,8 +16,10 @@ class Github extends GitRemoteable {
     return new Github(authentication)
   }
 
-  createRepo (repo) {
-    const remoteRepo = repo.orgs ? this.apiManager.orgs.addTeamRepo(repo) : this.apiManager.repos.create(repo)
+  createRepo (data) {
+    const { org, name } = data
+    const repo = org ? { repo: name, org, id: 25 } : { name }
+    const remoteRepo = org ? this.apiManager.orgs.addTeamRepo(repo) : this.apiManager.repos.create(repo)
     return remoteRepo.then(prop('data')).then(this.projection)
   }
 
