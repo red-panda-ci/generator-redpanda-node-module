@@ -3,6 +3,16 @@
 const { execSync } = require('child_process')
 
 class GitLocal {
+  constructor (opt) {
+    this.commitPreset = opt.commitPreset
+    this.initialCommits = {
+      'eslint': 'Build: Initial commit',
+      'angular': 'chore(init): Initial commit',
+      'atom': ':art: initial commit',
+      'ember': '[FEATURE init] Initial commit'
+    }
+  }
+
   static of () {
     return new GitLocal()
   }
@@ -26,7 +36,8 @@ class GitLocal {
     return this
   }
 
-  createBranchDevelopSync (commit) {
+  createBranchDevelopSync () {
+    const commit = this._getInitialCommit()
     execSync(`git commit -m '${commit}'`)
     execSync('git branch -m develop')
     return this
@@ -40,6 +51,10 @@ class GitLocal {
   checkoutSync (branch) {
     execSync(`git checkout  ${branch}`)
     return this
+  }
+
+  _getInitialCommit () {
+    return this.initialCommits[this.commitPreset]
   }
 }
 

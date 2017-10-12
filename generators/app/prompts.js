@@ -35,6 +35,27 @@ module.exports = function prompts (yeoman) {
       validate: checkEmpty
     },
     {
+      type: 'list',
+      name: 'commitPreset',
+      message: 'Select a commit style preset',
+      choices: [{
+        name: 'eslint',
+        value: 'eslint'
+      },
+      {
+        name: 'angular',
+        value: 'angular'
+      },
+      {
+        name: 'atom',
+        value: 'atom'
+      },
+      {
+        name: 'ember',
+        value: 'ember'
+      }]
+    },
+    {
       type: 'confirm',
       name: 'hasRemoteRepo',
       message: 'Create remote repository?'

@@ -25,8 +25,8 @@
   },
   "scripts": {
     "changelog":
-      "conventional-changelog -p <%= linterPreset %> -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "commitmsg": "validate-commit-msg -p <%= linterPreset %>",
+      "conventional-changelog -p <%= commitPreset %> -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "commitmsg": "validate-commit-msg -p <%= commitPreset %>",
     "lint": "eslint */**/*.js -f html -o ./test/reports/linter/index.html",
     "test": "node test/index.js",
     "cover":

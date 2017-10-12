@@ -16,11 +16,11 @@ class Github extends GitRemoteable {
    * @memberof Github
    * @example
    */
-  constructor (authentication) {
+  constructor (opt) {
     super()
-    this.authentication = authentication
+    this.authentication = opt.authentication
     this.apiManager = new GitHubApi()
-    this.apiManager.authenticate(authentication)
+    this.apiManager.authenticate(opt.authentication)
   }
 
   static of (authentication) {

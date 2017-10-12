@@ -4,13 +4,14 @@ const classes = require('extends-classes')
 const Github = require('./Github')
 const Bitbucket = require('./Bitbucket')
 const GitLocal = require('./GitLocal')
+const RemoteProviders = { GITHUB: Github, BITBUCKET: Bitbucket }
 
-module.exports = function gitManager (type, authentication) {
-  const RemoteProviders = { GITHUB: Github, BITBUCKET: Bitbucket }
+module.exports = function gitManager (opt) {
+  const {remoteProvider} = opt
 
-  const GitManager = (!type && !authentication)
+  const GitManager = (!remoteProvider)
                      ? GitLocal
-                     : class extends classes(RemoteProviders[type], GitLocal) {}
+                     : class extends classes(RemoteProviders[remoteProvider], GitLocal) {}
 
-  return new GitManager(authentication)
+  return new GitManager(opt)
 }

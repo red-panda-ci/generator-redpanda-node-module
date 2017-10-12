@@ -17,8 +17,8 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
     this.getAuthentication = function () {
       const { gitUser, gitPass, gitToken } = this.props
       return (this.props.gitAuthType === 'USER_AND_PASSWORD')
-             ? {type: 'basic', username: gitUser, password: gitPass}
-             : {type: 'oauth', token: gitToken}
+        ? { type: 'basic', username: gitUser, password: gitPass }
+        : { type: 'oauth', token: gitToken }
     }
 
     this.createRemoteRepo = function () {
@@ -26,18 +26,17 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
       const done = this.async()
 
       this.gitManager
-      .createRepo({
-        name,
-        org: gitOrganization
-      })
-      .then((remoteRepo) => {
-        this.remoteRepo = remoteRepo
-        this.props.gitrepository = remoteRepo.htmlUrl
-        this.props.ownerurl = remoteRepo.ownerUrl
-        this.props.sshUrl = remoteRepo.sshUrl
-        done(null, remoteRepo)
-      })
-      .catch(done)
+        .createRepo({
+          name,
+          org: gitOrganization
+        })
+        .then((remoteRepo) => {
+          this.props.gitrepository = remoteRepo.htmlUrl
+          this.props.ownerurl = remoteRepo.ownerUrl
+          this.props.sshUrl = remoteRepo.sshUrl
+          done(null, remoteRepo)
+        })
+        .catch(done)
     }
   }
 
@@ -46,15 +45,15 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
     return this.prompt(prompts(this)).then(props => {
       this.props = props
-      // @todo add linter selection
-      this.props.linterPreset = 'eslint'
     })
   }
 
   runBefore () {
-    this.gitManager = (this.props.hasRemoteRepo)
-                      ? this.createGitManager('GITHUB', this.getAuthentication())
-                      : this.createGitManager()
+    this.gitManager = this.createGitManager({
+      remoteProvider: this.props.gitRemoteProvider,
+      commitPreset: this.props.commitPreset,
+      authentication: this.getAuthentication()
+    })
   }
 
   runAfter () {
@@ -73,7 +72,7 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
   }
 
   install () {
-    this.installDependencies({bower: false})
+    this.installDependencies({ bower: false })
   }
 
   end () {
@@ -84,9 +83,9 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
     }
 
     this.gitManager
-    .createBranchDevelopSync('New: Initial commit')
-    .createBranchMasterpSync()
-    .checkoutSync('develop')
+      .createBranchDevelopSync()
+      .createBranchMasterpSync()
+      .checkoutSync('develop')
 
     if (this.props.hasRemoteRepo) this.gitManager.remoteAddSync(this.remoteRepo.sshUrl)
     if (this.props.SyncRemoteRepo) this.gitManager.pushSync('develop').pushSync('master')
