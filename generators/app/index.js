@@ -46,6 +46,8 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
     return this.prompt(prompts(this)).then(props => {
       this.props = props
+      // @todo add linter selection
+      this.props.linterPreset = 'eslint'
     })
   }
 
@@ -57,7 +59,7 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
   runAfter () {
     if (this.props.hasRemoteRepo) this.createRemoteRepo()
-   // this.gitManager.initSync() // init in runAfter for register npm hooks
+    this.gitManager.initSync() // init in runAfter for create .git to register hunsky hooks ofter install deps
   }
 
   writing () {
@@ -81,7 +83,12 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
       console.log(err.message)
     }
 
+    this.gitManager
+    .createBranchDevelopSync('New: Initial commit')
+    .createBranchMasterpSync()
+    .checkoutSync('develop')
+
     if (this.props.hasRemoteRepo) this.gitManager.remoteAddSync(this.remoteRepo.sshUrl)
-    if (this.props.SyncRemoteRepo) this.gitManager.createAndPushDevelopSync('New: Initial commit')
+    if (this.props.SyncRemoteRepo) this.gitManager.pushSync('develop').pushSync('master')
   }
 }

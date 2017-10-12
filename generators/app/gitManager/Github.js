@@ -34,9 +34,6 @@ class Github extends GitRemoteable {
     return remoteRepo
             .then(prop('data'))
             .then(this.projection)
-            .catch((err) => {
-              console.log('err', err)
-            })
   }
 
   projection (data) {

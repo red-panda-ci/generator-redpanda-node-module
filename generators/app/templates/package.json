@@ -7,6 +7,7 @@
     "module-alias": "^2.0.1"
   },
   "devDependencies": {
+    "conventional-changelog-cli": "^1.3.4",
     "chai": "^4.1.2",
     "coveralls": "^2.13.1",
     "eslint-config-prettier": "^2.4.0",
@@ -23,7 +24,9 @@
     "validate-commit": "^3.2.1"
   },
   "scripts": {
-    "commitmsg": "validate-commit-msg -p eslint",
+    "changelog":
+      "conventional-changelog -p <%= linterPreset %> -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "commitmsg": "validate-commit-msg -p <%= linterPreset %>",
     "lint": "eslint */**/*.js -f html -o ./test/reports/linter/index.html",
     "test": "node test/index.js",
     "cover":

@@ -22,20 +22,23 @@ class GitLocal {
   }
 
   addSync (pattern) {
-    execSync(`git add --ignore-errors ${pattern}`)
+    execSync(`git add ${pattern}`)
     return this
   }
 
-  createAndPushDevelopSync (commit) {
-    execSync(`git commit -m ${commit}`)
+  createBranchDevelopSync (commit) {
+    execSync(`git commit -m '${commit}'`)
     execSync('git branch -m develop')
-    execSync('git push origin develop')
     return this
   }
 
-  createAndPushMasterSync () {
+  createBranchMasterpSync () {
     execSync('git checkout -b master')
-    execSync('git push origin master')
+    return this
+  }
+
+  checkoutSync (branch) {
+    execSync(`git checkout  ${branch}`)
     return this
   }
 }
