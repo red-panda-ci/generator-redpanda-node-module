@@ -48,10 +48,9 @@
     "git-user-name": "^1.2.0",
     "github": "^11.0.0",
     "interface": "^1.2.1",
-    "modelo": "^4.2.0",
-    "ramda": "^0.24.1",
+    "ramda": "^0.25.0",
     "split-keywords": "^2.0.1",
-    "yeoman-generator": "^1.0.0",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.0"
   },
   "jest": {
