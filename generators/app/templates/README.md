@@ -22,9 +22,10 @@ MIT © [<%= author %>](<%= email %>)
 
 [npm-image]: https://badge.fury.io/js/<%= name %>.svg
 [npm-url]: https://npmjs.org/package/<%= name %>
-[travis-image]: https://travis-ci.org/madoos/<%= name %>.svg?branch=master
-[travis-url]: https://travis-ci.org/madoos/<%= name %>
-[daviddm-image]: https://david-dm.org/madoos/<%= name %>.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/madoos/<%= name %>
-[coveralls-image]: https://coveralls.io/repos/madoos/<%= name %>/badge.svg
-[coveralls-url]: https://coveralls.io/r/madoos/<%= name %>
+[travis-image]: https://travis-ci.org/<%= projectOwner %>/<%= name %>.svg?branch=develop
+[travis-url]: https://travis-ci.org/<%= projectOwner %>/<%= name %>
+[daviddm-image]: https://david-dm.org/<%= projectOwner %>/<%= name %>.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/<%= projectOwner %>/<%= name %>
+[coveralls-image]: https://coveralls.io/repos/<%= projectOwner %>/<%= name %>/badge.svg
+[coveralls-url]: https://coveralls.io/r/<%= projectOwner %>/<%= name %>
+

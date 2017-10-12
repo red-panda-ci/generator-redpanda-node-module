@@ -2,7 +2,11 @@
 
 const username = require('git-user-name')
 const email = require('git-user-email')
+const { complement } = require('ramda')
 const { checkEmpty } = require('./utils')
+
+const hasRemoteRepo = answers => answers.hasRemoteRepo
+const notHasRemoteRepo = complement(hasRemoteRepo)
 
 module.exports = function prompts (yeoman) {
   return [
@@ -72,9 +76,7 @@ module.exports = function prompts (yeoman) {
         name: 'User repo',
         value: 'USER_REPO'
       }],
-      when: function (answers) {
-        return answers.hasRemoteRepo
-      }
+      when: hasRemoteRepo
     },
     {
       type: 'list',
@@ -83,7 +85,7 @@ module.exports = function prompts (yeoman) {
       choices: [{
         name: 'Github',
         value: 'GITHUB'
-      },
+      } /* ,
       {
         name: 'Bitbucket',
         value: 'BITBUCKET'
@@ -91,10 +93,8 @@ module.exports = function prompts (yeoman) {
       {
         name: 'Gitlab',
         value: 'GITLAB'
-      }],
-      when: function (answers) {
-        return answers.hasRemoteRepo
-      }
+      } */],
+      when: hasRemoteRepo
     },
     {
       type: 'input',
@@ -124,27 +124,21 @@ module.exports = function prompts (yeoman) {
         name: 'Authentication token',
         value: 'AUTHENTICATION_TOKEN'
       }],
-      when: function (answers) {
-        return answers.hasRemoteRepo
-      }
+      when: hasRemoteRepo
     },
     {
       type: 'input',
-      name: 'gitrepository',
+      name: 'htmlUrl',
       message: 'Github repo url(optional):',
       default: null,
-      when: function (answers) {
-        return !answers.hasRemoteRepo
-      }
+      when: notHasRemoteRepo
     },
     {
       type: 'input',
-      name: 'ownerurl',
+      name: 'ownerUrl',
       message: 'Author page url(optional):',
       default: null,
-      when: function (answers) {
-        return !answers.hasRemoteRepo
-      }
+      when: notHasRemoteRepo
     },
     {
       type: 'input',
@@ -172,6 +166,14 @@ module.exports = function prompts (yeoman) {
       when: function (answers) {
         return answers.gitAuthType === 'AUTHENTICATION_TOKEN'
       }
+    },
+    {
+      type: 'input',
+      name: 'projectOwner',
+      message: 'Git user or organization:',
+      validate: checkEmpty,
+      when: notHasRemoteRepo
+
     }
     /* ,
     {

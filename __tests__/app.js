@@ -11,9 +11,10 @@ describe('generator-redpanda-node-module:app', () => {
         description: 'Some description',
         author: 'Author',
         email: 'email@email.es',
+        commitPreset: 'eslint',
         hasRemoteRepo: false,
-        gitrepository: 'https://some-git-repo',
-        ownerurl: 'https://some-owner-url'
+        htmlUrl: 'https://some-git-repo',
+        ownerUrl: 'https://some-owner-url'
       })
   })
 

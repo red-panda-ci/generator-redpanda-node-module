@@ -6,6 +6,7 @@ const { readdirSync } = require('fs')
 const { join } = require('path')
 const prompts = require('./prompts')
 const createGitManager = require('./gitManager')
+const { merge } = require('./utils')
 
 module.exports = class GeneratorNodeRedPanda extends Generator {
   constructor (...args) {
@@ -25,16 +26,14 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
       const { name, gitOrganization } = this.props
       const done = this.async()
 
-      this.gitManager
+      return this.gitManager
         .createRepo({
           name,
           org: gitOrganization
         })
-        .then((remoteRepo) => {
-          this.props.gitrepository = remoteRepo.htmlUrl
-          this.props.ownerurl = remoteRepo.ownerUrl
-          this.props.sshUrl = remoteRepo.sshUrl
-          done(null, remoteRepo)
+        .then((repo) => {
+          merge(this.props, repo)
+          done(null, repo)
         })
         .catch(done)
     }
@@ -44,7 +43,33 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
     this.log(yosay(`Welcome to the beautiful ${chalk.red('generator-redpanda-node-module')} generator!`))
 
     return this.prompt(prompts(this)).then(props => {
+      /*
+        this.props description:
+        {
+          name {String} -project name-,
+          description {String} -project descripton-,
+          author {String},
+          email {String},
+          commitPreset {String} - eslin, angular, atom, ember -,
+          projectOwner {String} - to use in README.md to configure URLs -
+          hasRemoteRepo {Boolean},
+          SyncRemoteRepo {Boolean},
+          gitAuthType {String} - USER_AND_PASSWORD, TOKEN -,
+          gitUser {String},
+          gitPass {String},
+          gitToken {String},
+          gitRemoteProvider {String} - GITHUB, BITBUCKET, GITLAB- ,
+          gitRemoteRepoType {String} - USER_REPO, ORGANIZATION_REPO -
+          gitOrganization {String} - Only if is gitRemoteRepoType: ORGANIZATION_REPO - ,
+          htmlUrl {String} - Repo http url -,
+          ownerUrl {String} - Owner http page URL - ,
+          sshUrl {String} - Git remote ssh to make push -
+        }
+      */
       this.props = props
+      if (props.hasRemoteRepo) {
+        this.props.projectOwner = (props.gitRemoteRepoType === 'ORGANIZATION_REPO') ? props.gitOrganization : props.gitUser
+      }
     })
   }
 
@@ -84,10 +109,10 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
     this.gitManager
       .createBranchDevelopSync()
-      .createBranchMasterpSync()
+      .createBranchMasterSync()
       .checkoutSync('develop')
 
-    if (this.props.hasRemoteRepo) this.gitManager.remoteAddSync(this.remoteRepo.sshUrl)
+    if (this.props.hasRemoteRepo) this.gitManager.remoteAddSync(this.props.sshUrl)
     if (this.props.SyncRemoteRepo) this.gitManager.pushSync('develop').pushSync('master')
   }
 }

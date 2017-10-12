@@ -1,3 +1,5 @@
 'use strict'
 
-// code!
+module.exports = function dummy () {
+  return true
+}

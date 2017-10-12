@@ -43,16 +43,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+<%= gitrepository %>"
+    "url": "git+<%= htmlUrl %>"
   },
   "author": {
     "name": "<%= author %>",
     "email": "<%= email %>",
-    "url": "<%= ownerurl %>"
+    "url": "<%= ownerUrl %>"
   },
   "license": "MIT",
   "bugs": {
-    "url": "<%= gitrepository %>/issues"
+    "url": "<%= htmlUrl %>/issues"
   },
-  "homepage": "<%= gitrepository %>#readme"
+  "homepage": "<%= htmlUrl %>#readme"
 }

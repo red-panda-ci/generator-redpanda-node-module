@@ -43,7 +43,7 @@ class GitLocal {
     return this
   }
 
-  createBranchMasterpSync () {
+  createBranchMasterSync () {
     execSync('git checkout -b master')
     return this
   }
