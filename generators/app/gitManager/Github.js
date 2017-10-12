@@ -6,8 +6,19 @@ const { prop, path } = require('ramda')
 const { projection } = require('../utils')
 
 class Github extends GitRemoteable {
+  /**
+   * Creates an instance of Github.
+   * @param {Object} authentication
+   * @param {string} authentication.type
+   * @param {string} authentication.username
+   * @param {string} authentication.password
+   * @param {string} authentication.token
+   * @memberof Github
+   * @example
+   */
   constructor (authentication) {
     super()
+    this.authentication = authentication
     this.apiManager = new GitHubApi()
     this.apiManager.authenticate(authentication)
   }
@@ -18,9 +29,14 @@ class Github extends GitRemoteable {
 
   createRepo (data) {
     const { org, name } = data
-    const repo = org ? { repo: name, org, id: 25 } : { name }
-    const remoteRepo = org ? this.apiManager.orgs.addTeamRepo(repo) : this.apiManager.repos.create(repo)
-    return remoteRepo.then(prop('data')).then(this.projection)
+    const repo = org ? { name, org } : { name }
+    const remoteRepo = org ? this.apiManager.repos.createForOrg(repo) : this.apiManager.repos.create(repo)
+    return remoteRepo
+            .then(prop('data'))
+            .then(this.projection)
+            .catch((err) => {
+              console.log('err', err)
+            })
   }
 
   projection (data) {

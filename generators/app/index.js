@@ -16,7 +16,7 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
     this.getAuthentication = function () {
       const { gitUser, gitPass, gitToken } = this.props
-      return (this.props.githubAuthType === 'USER_AND_PASSWORD')
+      return (this.props.gitAuthType === 'USER_AND_PASSWORD')
              ? {type: 'basic', username: gitUser, password: gitPass}
              : {type: 'oauth', token: gitToken}
     }

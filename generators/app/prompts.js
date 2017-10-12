@@ -93,7 +93,7 @@ module.exports = function prompts (yeoman) {
     },
     {
       type: 'list',
-      name: 'githubAuthType',
+      name: 'gitAuthType',
       message: 'Select authentication type',
       choices: [{
         name: 'User and Password',
@@ -131,7 +131,7 @@ module.exports = function prompts (yeoman) {
       message: 'User:',
       validate: checkEmpty,
       when: function (answers) {
-        return answers.githubAuthType === 'USER_AND_PASSWORD'
+        return answers.gitAuthType === 'USER_AND_PASSWORD'
       }
     },
     {
@@ -140,7 +140,7 @@ module.exports = function prompts (yeoman) {
       message: 'Password:',
       validate: checkEmpty,
       when: function (answers) {
-        return answers.githubAuthType === 'USER_AND_PASSWORD'
+        return answers.gitAuthType === 'USER_AND_PASSWORD'
       }
     },
     {
@@ -149,7 +149,7 @@ module.exports = function prompts (yeoman) {
       message: 'token:',
       validate: checkEmpty,
       when: function (answers) {
-        return answers.githubAuthType === 'AUTHENTICATION_TOKEN'
+        return answers.gitAuthType === 'AUTHENTICATION_TOKEN'
       }
     }
     /* ,
