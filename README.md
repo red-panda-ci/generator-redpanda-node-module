@@ -17,18 +17,19 @@ yo generator-redpanda-node-module
 ```
 ## Features
 
-* Contributor Covenant code of conduct
-* Linter standard style 
-* Commit validation with presets: eslint, angular, atom, ember
-* Changelog creation
-* CLI support with yargs
-* Test with mocha
-* Coverage with nyc
-* Coverage visualization
-* Github repo synchronization
-* Jenkins integration
-* Travis integration
-* SonarQube support
+- Contributor [Covenant code of conduct](https://www.contributor-covenant.org/)
+- Linter [Standard](https://standardjs.com/)  style
+- [Commit validation](https://github.com/willsoto/validate-commit) with presets: eslint, angular, atom, ember
+- [Changelog](https://github.com/conventional-changelog/conventional-changelog) creation
+- [yargs](https://github.com/yargs/yargs) CLI support
+- [Mocha](https://mochajs.org/) Test
+- [nyc](https://github.com/istanbuljs/nyc) coverage
+- [Coverage visualization](https://github.com/indexzero/http-server)
+- [nsp](https://github.com/nodesecurity/nsp) known vulnerability check
+- Github repo synchronization
+- Jenkins integration
+- Travis integration
+- SonarQube support
 
 ## License
 
