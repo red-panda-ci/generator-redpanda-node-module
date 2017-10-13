@@ -32,7 +32,6 @@
     "jest-cli": "^21.0.0",
     "lint-staged": "^4.2.1",
     "nsp": "^2.6.3",
-    "nyc": "^11.2.1",
     "prettier": "^1.7.0",
     "standard": "^10.0.3",
     "validate-commit": "^3.2.1",
@@ -59,13 +58,12 @@
     "changelog":
       "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "commitmsg": "validate-commit-msg -p eslint",
-    "cover":
-      "nyc --reporter=lcov --report-dir=__tests__/reports/coverage --temp-directory=__tests__/reports/coverage npm test",
+    "cover": "jest --coverage",
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest",
-    "serve:coverage": "http-server __tests__/reports/coverage/ -o"
+    "serve:coverage": "http-server coverage/ -o"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
