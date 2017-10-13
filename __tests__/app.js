@@ -14,7 +14,10 @@ describe('generator-redpanda-node-module:app', () => {
         commitPreset: 'eslint',
         hasRemoteRepo: false,
         htmlUrl: 'https://some-git-repo',
-        ownerUrl: 'https://some-owner-url'
+        ownerUrl: 'https://some-owner-url',
+        keywords: 'key1, key2',
+        cliEnable: true,
+        cliName: 'cli-name'
       })
   })
 
@@ -37,7 +40,8 @@ describe('generator-redpanda-node-module:app', () => {
       'bin/CI/docker-image-builder',
       'bin/CI/get-release',
       'bin/CI/npm-publisher',
-      'bin/CI/test-builder'
+      'bin/CI/test-builder',
+      'bin/CLI/index.js'
     ])
   })
 })

@@ -2,9 +2,10 @@
 
 const Mocha = require('mocha')
 const mocha = new Mocha({ timeout: 3000 })
+const { join } = require('path')
 
 const suite = [
-    __dirname + '/dummy.js'
+  join(__dirname, 'dummy.js')
 ]
 
 suite

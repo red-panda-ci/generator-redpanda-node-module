@@ -5,6 +5,7 @@ const yosay = require('yosay')
 const { readdirSync } = require('fs')
 const { join } = require('path')
 const prompts = require('./prompts')
+const splitKeywords = require('split-keywords')
 const createGitManager = require('./gitManager')
 const { merge } = require('./utils')
 
@@ -37,6 +38,10 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
         })
         .catch(done)
     }
+  }
+
+  initializing () {
+    this.composeWith(require.resolve('../generator-cli'))
   }
 
   prompting () {
@@ -94,6 +99,10 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
         this.props
       )
     })
+
+    const pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
+    pkg.keywords = splitKeywords(this.props.keywords)
+    this.fs.writeJSON(this.destinationPath('package.json'), pkg)
   }
 
   install () {

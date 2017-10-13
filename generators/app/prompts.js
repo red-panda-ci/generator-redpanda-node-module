@@ -174,13 +174,12 @@ module.exports = function prompts (yeoman) {
       validate: checkEmpty,
       when: notHasRemoteRepo
 
-    }
-    /* ,
+    },
     {
       type: 'input',
       name: 'keywords',
       message: 'Keyword separated by coma',
       validate: checkEmpty
-    } */
+    }
   ]
 }
