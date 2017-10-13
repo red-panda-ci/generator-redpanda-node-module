@@ -3,7 +3,7 @@
 const username = require('git-user-name')
 const email = require('git-user-email')
 const { complement } = require('ramda')
-const { checkEmpty } = require('./utils')
+const { checkEmpty } = require('../utils')
 
 const hasRemoteRepo = answers => answers.hasRemoteRepo
 const notHasRemoteRepo = complement(hasRemoteRepo)

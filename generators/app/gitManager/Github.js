@@ -3,7 +3,7 @@
 const GitRemoteable = require('./GitRemoteable')
 const GitHubApi = require('github')
 const { prop, path } = require('ramda')
-const { projection } = require('../utils')
+const { projection } = require('../../utils')
 
 class Github extends GitRemoteable {
   /**

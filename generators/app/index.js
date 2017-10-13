@@ -4,10 +4,10 @@ const chalk = require('chalk')
 const yosay = require('yosay')
 const { readdirSync } = require('fs')
 const { join } = require('path')
+const { merge } = require('ramda')
+const createGitManager = require('./gitManager')
 const prompts = require('./prompts')
 const splitKeywords = require('split-keywords')
-const createGitManager = require('./gitManager')
-const { merge } = require('./utils')
 
 module.exports = class GeneratorNodeRedPanda extends Generator {
   constructor (...args) {

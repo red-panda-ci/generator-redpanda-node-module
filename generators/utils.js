@@ -6,10 +6,6 @@ const projection = curry(function (descriptor, data) {
   return map((fn) => fn(data), descriptor)
 })
 
-const merge = curry(function (target, source) {
-  return Object.assign(target, source)
-})
-
 const checkEmpty = (value) => {
   if (!value) return `Empty value is not allowed!`
   return true
@@ -17,6 +13,5 @@ const checkEmpty = (value) => {
 
 module.exports = {
   projection,
-  merge,
   checkEmpty
 }

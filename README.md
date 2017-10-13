@@ -21,6 +21,7 @@ yo generator-redpanda-node-module
 * Linter standard style 
 * Commit validation with presets: eslint, angular, atom, ember
 * Changelog creation
+* CLI support with yargs
 * Test with mocha
 * Coverage with nyc
 * Coverage visualization

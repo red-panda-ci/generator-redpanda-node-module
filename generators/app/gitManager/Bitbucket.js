@@ -1,7 +1,7 @@
 'use strict'
 
 const GitRemoteable = require('./GitRemoteable')
-const { projection } = require('../utils')
+const { projection } = require('../../utils')
 const { always } = require('ramda')
 const alwaysNull = always(null)
 

@@ -3,7 +3,7 @@ const Generator = require('yeoman-generator')
 const { readdirSync } = require('fs')
 const { join } = require('path')
 const { mergeDeepLeft } = require('ramda')
-const { checkEmpty } = require('../app/utils')
+const { checkEmpty } = require('../utils')
 
 module.exports = class GeneratorCli extends Generator {
   prompting () {
