@@ -58,11 +58,10 @@
     "changelog":
       "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "commitmsg": "validate-commit-msg -p eslint",
-    "cover": "jest --coverage",
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest",
+    "test": "jest  --coverage",
     "serve:coverage": "http-server coverage/ -o"
   },
   "lint-staged": {
