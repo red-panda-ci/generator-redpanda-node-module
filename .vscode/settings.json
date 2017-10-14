@@ -1,3 +1,11 @@
 {
-  "cSpell.words": ["commitmsg", "precommit", "redpanda"]
+  "cSpell.words": [
+    "Remoteable",
+    "bitbucket",
+    "commitmsg",
+    "precommit",
+    "redpanda",
+    "repo",
+    "repos"
+  ]
 }
