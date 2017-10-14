@@ -33,7 +33,7 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
           org: gitOrganization
         })
         .then((repo) => {
-          merge(this.props, repo)
+          this.props = merge(this.props, repo)
           done(null, repo)
         })
         .catch(done)
@@ -45,7 +45,7 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
   }
 
   prompting () {
-    this.log(yosay(`Welcome to the beautiful ${chalk.red('generator-redpanda-node-module')} generator!`))
+    this.log(yosay(`Welcome to the beautiful ${chalk.green('generator-redpanda-node-module')} generator!`))
 
     return this.prompt(prompts(this)).then(props => {
       /*

@@ -13,8 +13,8 @@ class GitLocal {
     }
   }
 
-  static of () {
-    return new GitLocal()
+  static of (...args) {
+    return new GitLocal(...args)
   }
   remoteAddSync (sshUrl) {
     execSync(`git remote add origin ${sshUrl}`)

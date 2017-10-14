@@ -9,7 +9,7 @@
     "url": "https://github.com/red-panda-ci"
   },
   "files": ["generators"],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
     "yo-generator",
     "node",

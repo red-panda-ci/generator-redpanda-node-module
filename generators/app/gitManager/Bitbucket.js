@@ -6,13 +6,18 @@ const { always } = require('ramda')
 const alwaysNull = always(null)
 
 class Bitbucket extends GitRemoteable {
-  constructor () {
+  constructor (opt) {
     super()
+    this.authentication = opt.authentication
     this.apiManager = null
   }
 
-  static of (authentication) {
-    return null
+  static of (...args) {
+    return new Bitbucket(...args)
+  }
+
+  createRepo (repo) {
+    return Promise.resolve(null)
   }
 
   projection (data) {
@@ -20,7 +25,7 @@ class Bitbucket extends GitRemoteable {
       htmlUrl: alwaysNull,
       ownerUrl: alwaysNull,
       sshUrl: alwaysNull
-    })(data)
+    }, data)
   }
 }
 

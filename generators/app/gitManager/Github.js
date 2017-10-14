@@ -41,7 +41,7 @@ class Github extends GitRemoteable {
       htmlUrl: prop('html_url'),
       ownerUrl: path(['owner', 'html_url']),
       sshUrl: prop('ssh_url')
-    })(data)
+    }, data)
   }
 }
 

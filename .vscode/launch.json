@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
+      "stopOnEntry": false,
+      "args": ["--runInBand"],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": null,
+      "runtimeExecutable": null,
+      "runtimeArgs": ["--nolazy"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "externalConsole": false,
+      "sourceMaps": false,
+      "outDir": null
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Yeoman generator",
+      "program": "${workspaceRoot}/node_modules/yo/lib/cli.js",
+      "args": ["${workspaceRoot}/generators/app/index.js"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
