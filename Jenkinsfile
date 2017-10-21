@@ -2,8 +2,8 @@
 
 node {
 
-    def GIT_USER = "<%= projectOwner %>"
-    def GIT_REPO = "<%= name %>"
+    def GIT_USER = "red-panda-ci"
+    def GIT_REPO = "generator-redpanda-node-module"
     def GIT_BRANCH = env.BRANCH_NAME
     def GIT_TOKEN =  env.GIT_TOKEN
     def NPM_TOKEN = env.NPM_TOKEN
