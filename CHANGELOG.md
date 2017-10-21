@@ -1,3 +1,14 @@
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.1...v0.0.4) (2017-10-21)
+
+
+### New
+
+* Release to version v ([2a4e0ebe03076b08df3c0bb73d2e04cbecdef2a4](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/2a4e0ebe03076b08df3c0bb73d2e04cbecdef2a4))
+* Release to version v ([789c7cb723c1aa71862d6c52e8fac4183bc695a6](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/789c7cb723c1aa71862d6c52e8fac4183bc695a6))
+
+
+
 <a name="0.0.1"></a>
 ## [0.0.1](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/b728597f99d9821eedf7ec48b1fdc50501555f6c...v0.0.1) (2017-10-21)
 
