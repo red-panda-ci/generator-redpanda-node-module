@@ -1,6 +1,6 @@
 {
   "name": "generator-redpanda-node-module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Generator specialized in node modules",
   "homepage": "https://github.com/red-panda-ci/generator-redpanda-node-module",
   "author": {
@@ -59,7 +59,7 @@
       "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "commitmsg": "validate-commit-msg -p eslint",
     "make:publish": "bin/publish.sh",
-    "prepublish": "nsp check && bin/prepublish.sh",
+    "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest  --coverage",
