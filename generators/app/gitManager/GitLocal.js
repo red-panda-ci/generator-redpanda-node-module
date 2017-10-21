@@ -11,6 +11,13 @@ class GitLocal {
       'atom': ':art: initial commit',
       'ember': '[FEATURE init] Initial commit'
     }
+
+    this.releaseCommits = {
+      'eslint': 'New: Release to',
+      'angular': 'chore(init): Release to',
+      'atom': ':art: Release to',
+      'ember': '[FEATURE init] Release to'
+    }
   }
 
   static of (...args) {
@@ -55,6 +62,10 @@ class GitLocal {
 
   _getInitialCommit () {
     return this.initialCommits[this.commitPreset]
+  }
+
+  getReleaseCommit () {
+    return this.releaseCommits[this.commitPreset]
   }
 }
 

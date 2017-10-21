@@ -2,29 +2,26 @@
 
 node {
 
-    def GITHUB_USER = "CHANGE"
-    def GITHUB_REPO = "CHANGE"
-    def DOCKER_IMAGE_BASE_NAME = "CHANGE/CHANGE"
-    def GITHUB_BRANCH = env.BRANCH_NAME
-    def GITHUB_TOKEN =  env.GITHUB_TOKEN
+    def GIT_USER = "<%= projectOwner %>"
+    def GIT_REPO = "<%= name %>"
+    def GIT_BRANCH = env.BRANCH_NAME
+    def GIT_TOKEN =  env.GIT_TOKEN
     def NPM_TOKEN = env.NPM_TOKEN
-    def DOCKER_USER = env.DOCKER_USER
-    def DOCKER_TOKEN = env.DOCKER_TOKEN
 
     stage("checkout SCM"){
       checkout scm
     }
 
     stage("Make Tests"){
-      sh "./bin/CI/test.sh ${GITHUB_USER} ${GITHUB_REPO} ${GITHUB_BRANCH} ${GITHUB_TOKEN}"
+      sh "./bin/CI/test.sh ${GIT_USER} ${GIT_REPO} ${GIT_BRANCH} ${GIT_TOKEN}"
     }
 
     if( env.BRANCH_NAME ==~ /.*release.*/ ){
 
-        def PACKAGE_VERSION = sh (script: "./bin/CI/get-release ${GITHUB_BRANCH}", returnStdout: true)
+        def PACKAGE_VERSION = sh (script: "./bin/CI/get-release.sh ${GIT_BRANCH}", returnStdout: true)
 
         stage("Publish package"){
-          sh "./bin/CI/publish ${GITHUB_USER} ${GITHUB_REPO} ${GITHUB_BRANCH} ${GITHUB_TOKEN} ${NPM_TOKEN} ${PACKAGE_VERSION}"
+          sh "./bin/CI/publish ${GIT_USER} ${GIT_REPO} ${GIT_BRANCH} ${GIT_TOKEN} ${NPM_TOKEN} ${PACKAGE_VERSION}"
         }
 
     }

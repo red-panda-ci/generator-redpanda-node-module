@@ -16,7 +16,7 @@ cond() {
 VERSION=$(cond "$PACKAGE_VERSION" "$PACKAGE_VERSION" "$1")
 UPDATE_BRANCHES=$(cond "$UPDATE_GIT_BRANCHES" "$UPDATE_GIT_BRANCHES" "$2")
 TAG=v$VERSION
-COMMIT_MSG="New: Release to version $TAG"
+COMMIT_MSG="<%= releaseCommit %> $TAG"
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 if [ ! -e ~/.npmrc ]; then
@@ -25,7 +25,7 @@ fi
 
 npm version --no-git-tag-version $VERSION
 npm run changelog
-git add CHANGELOG.md package.json
+git add .
 git commit -m "$COMMIT_MSG"
 git tag -a $TAG -m "$COMMIT_MSG"
 

@@ -70,6 +70,7 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
           htmlUrl {String} - Repo http url -,
           ownerUrl {String} - Owner http page URL - ,
           sshUrl {String} - Git remote ssh to make push -
+          releaseCommit {String} - commit to release used in bin/CI/publish.sh script
         }
       */
       this.props = props
@@ -85,6 +86,8 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
       commitPreset: this.props.commitPreset,
       authentication: this.getAuthentication()
     })
+
+    this.props.releaseCommit = this.gitManager.getReleaseCommit()
   }
 
   runAfter () {

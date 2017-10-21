@@ -19,9 +19,9 @@ module.exports = {
     '.npmignore',
     '.travis.yml',
     'bin/CI/docker-image-builder',
-    'bin/CI/get-release',
-    'bin/CI/npm-publisher',
-    'bin/CI/test-builder',
+    'bin/CI/get-release.sh',
+    'bin/CI/publish.sh',
+    'bin/CI/test.sh',
     'bin/CLI/index.js'
   ],
   answerForUserAndPassAuth: mergeDeepLeft({}, baseAnswers()),
