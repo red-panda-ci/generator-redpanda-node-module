@@ -1,5 +1,5 @@
 <a name="0.0.1"></a>
-## 0.0.1 (2017-10-21)
+## [0.0.1](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/b728597f99d9821eedf7ec48b1fdc50501555f6c...v0.0.1) (2017-10-21)
 
 
 ### Build
@@ -33,6 +33,7 @@
 * Add Github repo creation ([0c1aef4528a0ce65b16334fc37e6e1997554e960](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/0c1aef4528a0ce65b16334fc37e6e1997554e960))
 * Add SonarQube properties file  ([4ef6aef6cabb793bf032022ba2834bf013f2af2d](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/4ef6aef6cabb793bf032022ba2834bf013f2af2d)), closes [#6](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/6)
 * Add suport for eslint, angular, atom, ember commit convention  ([3eeb8f6acd0e1962d6e13f0eb1aa30ef792aa7ad](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/3eeb8f6acd0e1962d6e13f0eb1aa30ef792aa7ad)), closes [#9](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/9)
+* Release to version v0.0.1 ([c60d07ae1a47e5dcb2a26acb083992385f22bdb8](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/c60d07ae1a47e5dcb2a26acb083992385f22bdb8))
 
 ### Update
 
