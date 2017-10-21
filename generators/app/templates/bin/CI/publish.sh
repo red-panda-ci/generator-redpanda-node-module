@@ -18,5 +18,5 @@ docker run \
 -e NPM_COMMAND='run make:publish' \
 -e PACKAGE_VERSION=$PACKAGE_VERSION \
 -e NPM_TOKEN=$NPM_TOKEN \
--e UPDATE_GIT_BRANCHES=false \
+-e UPDATE_GIT_BRANCHES=true \
 redpandaci/npm-command-runner:1.0.0
