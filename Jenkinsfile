@@ -16,6 +16,16 @@ node {
       sh "./bin/CI/test.sh ${GIT_USER} ${GIT_REPO} ${GIT_BRANCH} ${GIT_TOKEN}"
     }
 
+    stage("publish Reports"){
+      publishHTML([
+        allowMissing: false,
+        alwaysLinkToLastBuild: false,
+        keepAll: false, reportDir: "coverage/lcov-report",
+        reportFiles: "index.html",
+        reportName: "Coverage Report"
+      ])
+    }
+
     if( env.BRANCH_NAME ==~ /.*release.*/ ){
 
         def PACKAGE_VERSION = sh (script: "./bin/CI/get-release.sh ${GIT_BRANCH}", returnStdout: true)
