@@ -19,5 +19,4 @@ docker run \
 -e PACKAGE_VERSION=$PACKAGE_VERSION \
 -e NPM_TOKEN=$NPM_TOKEN \
 -e UPDATE_GIT_BRANCHES=true \
--v `pwd`/coverage:workspace/coverage
 redpandaci/npm-command-runner:1.0.0
