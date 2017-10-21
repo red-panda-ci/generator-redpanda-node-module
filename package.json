@@ -1,6 +1,6 @@
 {
   "name": "generator-redpanda-node-module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Generator specialized in node modules",
   "homepage": "https://github.com/red-panda-ci/generator-redpanda-node-module",
   "author": {

@@ -1,6 +1,16 @@
+<a name="0.0.6"></a>
+## [0.0.6](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.5...v0.0.6) (2017-10-21)
+
+
+
+
 <a name="0.0.5"></a>
 ## [0.0.5](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.4...v0.0.5) (2017-10-21)
 
+
+### New
+
+* Release to version v0.0.5 ([2d94907ac36ad44cff0895d85ebb0097fe4b50fc](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/2d94907ac36ad44cff0895d85ebb0097fe4b50fc))
 
 
 
