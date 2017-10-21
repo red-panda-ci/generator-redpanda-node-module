@@ -58,6 +58,7 @@
     "changelog":
       "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "commitmsg": "validate-commit-msg -p eslint",
+    "publish": "bin/publish.sh",
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
