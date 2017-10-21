@@ -20,7 +20,7 @@ node {
       publishHTML([
         allowMissing: false,
         alwaysLinkToLastBuild: false,
-        keepAll: false, reportDir: "coverage/lcov-report",
+        keepAll: false, reportDir: "./coverage/lcov-report",
         reportFiles: "index.html",
         reportName: "Coverage Report"
       ])
