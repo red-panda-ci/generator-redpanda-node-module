@@ -1,3 +1,35 @@
+<a name="0.0.13"></a>
+## [0.0.13](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.12...v0.0.13) (2017-10-21)
+
+
+### Build
+
+* Add coverge reports in Jenkins buids ([30e26a29125465125af4b0428de682bf9151a560](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/30e26a29125465125af4b0428de682bf9151a560))
+* Add Jenkins integration ([aeb462db79f23ec30e3787b85be68e7d09c95927](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/aeb462db79f23ec30e3787b85be68e7d09c95927))
+* Change coverage path in script test.sh ([c2a278c81feef9be1be488f03dd2dd163db9e967](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/c2a278c81feef9be1be488f03dd2dd163db9e967))
+* Change to relative path in htm publisher  ([d0f35d8dee14f5d1ef8b0e818d7e5396e889c657](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/d0f35d8dee14f5d1ef8b0e818d7e5396e889c657))
+* Enable update git Branches in Jenkins integration ([d568076cebb9a6b8ee6fc442cbb793e32177b0fb](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/d568076cebb9a6b8ee6fc442cbb793e32177b0fb))
+* Fix Error in coverage path  ([19d90015d9d5e7255a0705bad1b219b6c732afff](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/19d90015d9d5e7255a0705bad1b219b6c732afff))
+* Fix error in volumen path on CI/test.sh  ([8db43cba22aac69d8a83b1ce9bd198e71ef8e710](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/8db43cba22aac69d8a83b1ce9bd198e71ef8e710))
+* Fix Error syntax error CI/test.sh  ([199cf1885c9337a54ed169a872b39ab4a5eca9bf](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/199cf1885c9337a54ed169a872b39ab4a5eca9bf))
+* Fix error: mount path must be absolute in Jenkins build ([b1ba3d919c193683417c1b66019847d6bb1fc6ba](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/b1ba3d919c193683417c1b66019847d6bb1fc6ba))
+* Remove -it instruction in dcker scripts ([19096ed95c46fae38fe82296bc89c2c62d8ab98d](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/19096ed95c46fae38fe82296bc89c2c62d8ab98d))
+
+### Docs
+
+* Add Jenkins status badge ([4fd832466c4f58b4e2d5135a86fd7f6ce33a6514](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/4fd832466c4f58b4e2d5135a86fd7f6ce33a6514))
+* Add npm run make:publish command description ([3409376febdbe8cfe645110067184b8bb997f072](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/3409376febdbe8cfe645110067184b8bb997f072))
+
+### Fix
+
+* Fix tti error in Jenkins integration ([cfb9238ea542d573180a736223768ae174620659](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/cfb9238ea542d573180a736223768ae174620659))
+
+### New
+
+* Add suport for Jenkins file ([50209c73ee6cddee311313d058a83331596d3f51](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/50209c73ee6cddee311313d058a83331596d3f51))
+
+
+
 <a name="0.0.12"></a>
 ## [0.0.12](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.7...v0.0.12) (2017-10-21)
 
@@ -5,6 +37,10 @@
 ### Build
 
 * Add command runner sh ([b83ef253da2b17c9c02a9b2eee9e46465a7fde09](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/b83ef253da2b17c9c02a9b2eee9e46465a7fde09))
+
+### New
+
+* Release to version v0.0.12 ([6324aba8ce68a35907035a89dcc37126ca204ce1](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/6324aba8ce68a35907035a89dcc37126ca204ce1))
 
 
 
