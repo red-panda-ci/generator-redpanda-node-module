@@ -1,4 +1,4 @@
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url][![Build Status][jenkins-image]][jenkins-url]
 
 # generator-redpanda-node-module
 
@@ -53,3 +53,5 @@ MIT © [red-panda-ci](https://github.com/red-panda-ci)
 [daviddm-url]: https://david-dm.org/red-panda-ci/generator-redpanda-node-module
 [coveralls-image]: https://coveralls.io/repos/red-panda-ci/generator-redpanda-node-module/badge.svg
 [coveralls-url]: https://coveralls.io/r/red-panda-ci/generator-redpanda-node-module
+[jenkins-image]: https://jenkins.redpandaci.com/job/red-panda-ci/job/generator-redpanda-node-module/job/develop/badge/icon
+[jenkins-url]: https://jenkins.redpandaci.com/job/red-panda-ci/job/generator-redpanda-node-module/job/develop/
