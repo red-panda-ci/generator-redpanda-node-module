@@ -10,7 +10,7 @@ PACKAGE_VERSION=$6
 docker run \
 --rm \
 --privileged \
--it \
+-e FORCE_COLOR=1 \
 -e USER=$GIT_USER \
 -e REPO=$GIT_REPO \
 -e BRANCH=$GIT_BRANCH \
