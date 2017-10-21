@@ -1,6 +1,20 @@
+<a name="0.0.10"></a>
+## [0.0.10](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.7...v0.0.10) (2017-10-21)
+
+
+### Build
+
+* Add command runner sh ([b83ef253da2b17c9c02a9b2eee9e46465a7fde09](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/b83ef253da2b17c9c02a9b2eee9e46465a7fde09))
+
+
+
 <a name="0.0.7"></a>
 ## [0.0.7](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.6...v0.0.7) (2017-10-21)
 
+
+### New
+
+* Release to version v0.0.7 ([d2886a8fe7c321f2b808d62e75b20f8d886cdacc](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/d2886a8fe7c321f2b808d62e75b20f8d886cdacc))
 
 
 
