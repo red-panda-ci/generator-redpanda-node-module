@@ -25,7 +25,7 @@ fi
 
 npm version --no-git-tag-version $VERSION
 npm run changelog
-git add CHANGELOG.md package.json
+git add .
 git commit -m "$COMMIT_MSG"
 git tag -a $TAG -m "$COMMIT_MSG"
 
