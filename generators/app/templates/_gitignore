@@ -38,3 +38,5 @@ jspm_packages
 
 # Linter reports for CI
 test/report
+
+.npmrc
