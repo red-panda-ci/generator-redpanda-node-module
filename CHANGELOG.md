@@ -1,3 +1,13 @@
+<a name="0.0.14"></a>
+## [0.0.14](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.13...v0.0.14) (2017-10-22)
+
+
+### Build
+
+* Add .npmrc to .gitignore ([3a7022c9978ba8c17338465ab37c5bb02c652152](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/3a7022c9978ba8c17338465ab37c5bb02c652152))
+
+
+
 <a name="0.0.13"></a>
 ## [0.0.13](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.12...v0.0.13) (2017-10-21)
 
@@ -27,6 +37,7 @@
 ### New
 
 * Add suport for Jenkins file ([50209c73ee6cddee311313d058a83331596d3f51](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/50209c73ee6cddee311313d058a83331596d3f51))
+* Release to version v0.0.13 ([47d07a6ae5788476dea7e0d90f95ae5f616767ad](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/47d07a6ae5788476dea7e0d90f95ae5f616767ad))
 
 
 
