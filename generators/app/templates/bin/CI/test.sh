@@ -15,5 +15,5 @@ docker run \
 -e TOKEN=$GIT_TOKEN \
 -e NPM_COMMAND=test \
 -e COVERAGE_PATH='test/reports/coverage' \
--v `pwd`/coverage:/reports \
+-v `pwd`/coverage:/reports/coverage \
 redpandaci/npm-command-runner:1.0.0
