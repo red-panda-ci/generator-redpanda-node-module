@@ -8,7 +8,6 @@
     "email": "maurice.ronet.dominguez@gmail.com",
     "url": "https://github.com/red-panda-ci"
   },
-  "files": ["generators"],
   "main": "generators/app/index.js",
   "keywords": [
     "yo-generator",
