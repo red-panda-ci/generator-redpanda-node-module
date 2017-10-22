@@ -1,6 +1,20 @@
+<a name="0.0.19"></a>
+## [0.0.19](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.18...v0.0.19) (2017-10-22)
+
+
+### Docs
+
+* Add space between badges ([94741c08d74b7870d7c34a7315f5934d8a526127](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/94741c08d74b7870d7c34a7315f5934d8a526127))
+
+
+
 <a name="0.0.18"></a>
 ## [0.0.18](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.17...v0.0.18) (2017-10-22)
 
+
+### New
+
+* Release to version v0.0.18 ([b5646890ce7723f5f5b7bf31981a1f9b92a50ae1](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/b5646890ce7723f5f5b7bf31981a1f9b92a50ae1))
 
 ### Update
 
