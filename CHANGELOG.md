@@ -1,3 +1,13 @@
+<a name="0.0.18"></a>
+## [0.0.18](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.17...v0.0.18) (2017-10-22)
+
+
+### Update
+
+* Add to .gitignore template .npmrc ([c44e6e612be25fd835b212daa8ebaf866dcd61db](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/c44e6e612be25fd835b212daa8ebaf866dcd61db))
+
+
+
 <a name="0.0.17"></a>
 ## [0.0.17](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.16...v0.0.17) (2017-10-22)
 
@@ -5,6 +15,7 @@
 ### New
 
 * Add coverage report support in Jenkinsfile ([7f11e8e270e363ecab4bee24453cec00f2050dd2](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/7f11e8e270e363ecab4bee24453cec00f2050dd2))
+* Release to version v0.0.17 ([096f4745f1cebf07a2bd7ffcd99203073dfcaf9c](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/096f4745f1cebf07a2bd7ffcd99203073dfcaf9c))
 
 
 
