@@ -1,3 +1,13 @@
+<a name="0.0.15"></a>
+## [0.0.15](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.14...v0.0.15) (2017-10-22)
+
+
+### Build
+
+* Remove files from package.json ([2d6d21b671c90cebb2cda8750d4086172e990eb3](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/2d6d21b671c90cebb2cda8750d4086172e990eb3))
+
+
+
 <a name="0.0.14"></a>
 ## [0.0.14](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.13...v0.0.14) (2017-10-22)
 
@@ -5,6 +15,10 @@
 ### Build
 
 * Add .npmrc to .gitignore ([3a7022c9978ba8c17338465ab37c5bb02c652152](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/3a7022c9978ba8c17338465ab37c5bb02c652152))
+
+### New
+
+* Release to version v0.0.14 ([1cd46d8ecc1c5a78490acfb2d165dffa2cec6b9d](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/1cd46d8ecc1c5a78490acfb2d165dffa2cec6b9d))
 
 
 
