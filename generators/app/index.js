@@ -97,9 +97,11 @@ module.exports = class GeneratorNodeRedPanda extends Generator {
 
   writing () {
     readdirSync(join(__dirname, './templates')).forEach((file) => {
+      const dest = (file === '_gitignore') ? file.replace('_', '.') : file
+
       this.fs.copyTpl(
         this.templatePath(file),
-        this.destinationPath(file),
+        this.destinationPath(dest),
         this.props
       )
     })
