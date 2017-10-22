@@ -3,6 +3,7 @@
     "Remoteable",
     "bitbucket",
     "commitmsg",
+    "gitignore",
     "precommit",
     "redpanda",
     "repo",

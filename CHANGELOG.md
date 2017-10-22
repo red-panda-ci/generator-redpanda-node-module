@@ -1,3 +1,13 @@
+<a name="0.0.16"></a>
+## [0.0.16](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.15...v0.0.16) (2017-10-22)
+
+
+### Update
+
+* Rename tempalte .gitignore to _gitignore to avoid conflict in npm publish ([5f751c702c3ff39ad5f814a0a1b4f58d44dacfcb](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/5f751c702c3ff39ad5f814a0a1b4f58d44dacfcb))
+
+
+
 <a name="0.0.15"></a>
 ## [0.0.15](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.14...v0.0.15) (2017-10-22)
 
@@ -5,6 +15,10 @@
 ### Build
 
 * Remove files from package.json ([2d6d21b671c90cebb2cda8750d4086172e990eb3](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/2d6d21b671c90cebb2cda8750d4086172e990eb3))
+
+### New
+
+* Release to version v0.0.15 ([856072bb4d6ee24ef0f45ce83b41f8de955f007b](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/856072bb4d6ee24ef0f45ce83b41f8de955f007b))
 
 
 
