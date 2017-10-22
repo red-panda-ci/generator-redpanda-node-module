@@ -1,6 +1,20 @@
+<a name="0.0.17"></a>
+## [0.0.17](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.16...v0.0.17) (2017-10-22)
+
+
+### New
+
+* Add coverage report support in Jenkinsfile ([7f11e8e270e363ecab4bee24453cec00f2050dd2](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/7f11e8e270e363ecab4bee24453cec00f2050dd2))
+
+
+
 <a name="0.0.16"></a>
 ## [0.0.16](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.15...v0.0.16) (2017-10-22)
 
+
+### New
+
+* Release to version v0.0.16 ([6c3cb6e94b8ce09bc9de3ca6db6e2a50ee8fafe7](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/6c3cb6e94b8ce09bc9de3ca6db6e2a50ee8fafe7))
 
 ### Update
 
