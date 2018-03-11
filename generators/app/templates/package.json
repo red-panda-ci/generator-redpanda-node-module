@@ -28,13 +28,12 @@
       "conventional-changelog -p <%= commitPreset %> -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "commitmsg": "validate-commit-msg -p <%= commitPreset %>",
     "lint": "eslint */**/*.js -f html -o ./test/reports/linter/index.html",
-    "test":
-      "nyc --reporter=lcov --report-dir=test/reports/coverage --temp-directory=test/reports/coverage node test/index.js",
+    "test": "nyc --reporter=lcov --temp-directory=coverage node test/index.js",
     "make:publish": "bin/publish.sh",
     "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "serve:coverage": "http-server test/reports/coverage/ -o",
+    "serve:coverage": "http-server coverage/ -o",
     "serve:linter": "http-server test/report/linter -o"
   },
   "lint-staged": {

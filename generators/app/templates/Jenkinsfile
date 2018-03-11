@@ -1,38 +1,93 @@
 #!groovy
 
-node {
+@Library('github.com/red-panda-ci/jenkins-pipeline-library@v2.6.1') _
 
-    def GIT_USER = "<%= projectOwner %>"
-    def GIT_REPO = "<%= name %>"
-    def GIT_BRANCH = env.BRANCH_NAME
-    def GIT_TOKEN =  env.GIT_TOKEN
-    def NPM_TOKEN = env.NPM_TOKEN
+// Initialize global config
+cfg = jplConfig('<%= name %>', 'node', '', [email:'<% email %>'])
 
-    stage("checkout SCM"){
-      checkout scm
-    }
+pipeline {
+    agent none
 
-    stage("Make Tests"){
-      sh "./bin/CI/test.sh ${GIT_USER} ${GIT_REPO} ${GIT_BRANCH} ${GIT_TOKEN}"
-    }
-
-    stage("publish Reports"){
-      publishHTML([
-        allowMissing: false,
-        alwaysLinkToLastBuild: false,
-        keepAll: false, reportDir: "./coverage/lcov-report",
-        reportFiles: "index.html",
-        reportName: "Coverage Report"
-      ])
-    }
-
-    if( env.BRANCH_NAME ==~ /.*release.*/ ){
-
-        def PACKAGE_VERSION = sh (script: "./bin/CI/get-release.sh ${GIT_BRANCH}", returnStdout: true)
-
-        stage("Publish package"){
-          sh "./bin/CI/publish.sh ${GIT_USER} ${GIT_REPO} ${GIT_BRANCH} ${GIT_TOKEN} ${NPM_TOKEN} ${PACKAGE_VERSION}"
+    stages {
+        stage ('Initialize') {
+            agent { label 'master' }
+            steps  {
+                jplStart(cfg)
+            }
         }
+        stage ('Test') {
+            agent { label 'master' }
+            steps  {
+                sh "bin/test.sh"
+            }
+            post {
+                always {
+                    publishHTML (target: [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll: true,
+                            reportDir: 'coverage/lcov-report',
+                            reportFiles: 'index.html',
+                            reportName: "Coverage-Report"
+                    ])
+                }
+            }
+        }
+        stage ('Build') {
+            agent { label 'master' }
+            when { expression { cfg.BRANCH_NAME.startsWith('release/v') || cfg.BRANCH_NAME.startsWith('hotfix/v') } }
+            steps {
+                script {
+                    docker.build('<IMAGE-NAME>', '--no-cache .')
+                    jplDockerPush (cfg, "<IMAGE-NAME>", "test", "", "https://registry.hub.docker.com", "<JENKINS_CREDENTIALS>")
+                }
+            }
+        }
+        stage ('Test deploy') {
+            agent { label 'master' }
+            when { expression { cfg.BRANCH_NAME.startsWith('release/v') || cfg.BRANCH_NAME.startsWith('hotfix/v') } }
+            steps {
+                sh "bin/deploy.sh update ${env.RANCHER_HOST} ${env.RANCHER_KEY} ${env.RANCHER_SECRET}"
+            }
+        }
+        stage ('Release confirm') {
+            when { expression { cfg.BRANCH_NAME.startsWith('release/v') || cfg.BRANCH_NAME.startsWith('hotfix/v') } }
+            steps {
+                jplPromoteBuild(cfg)
+            }
+        }
+        stage ('Production deploy') {
+            agent { label 'master' }
+            when { expression { cfg.BRANCH_NAME.startsWith('release/v') || cfg.BRANCH_NAME.startsWith('hotfix/v') } }
+            steps {
+                script {
+                    docker.build('redpandaci/api-status:latest')
+                    jplDockerPush (cfg, "<IMAGE-NAME>", "test", "", "https://registry.hub.docker.com", "<JENKINS_CREDENTIALS>")
+                }
+                sh "bin/deploy.sh update ${env.RANCHER_HOST} ${env.RANCHER_KEY} ${env.RANCHER_SECRET}"
+            }
+        }
+        stage ('Release finish') {
+            agent { label 'master' }
+            when { expression { (cfg.BRANCH_NAME.startsWith('release/v') || cfg.BRANCH_NAME.startsWith('hotfix/v')) && cfg.promoteBuild.enabled } }
+            steps {
+                jplCloseRelease(cfg)
+            }
+        }
+    }
 
+    post {
+        always {
+            jplPostBuild(cfg)
+        }
+    }
+
+    options {
+        timestamps()
+        ansiColor('xterm')
+        buildDiscarder(logRotator(artifactNumToKeepStr: '20',artifactDaysToKeepStr: '30'))
+        disableConcurrentBuilds()
+        skipDefaultCheckout()
+        timeout(time: 1, unit: 'DAYS')
     }
 }
