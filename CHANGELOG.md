@@ -1,3 +1,9 @@
+<a name="0.0.23"></a>
+## [0.0.23](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.22...v0.0.23) (2018-03-11)
+
+
+
+
 <a name="0.0.22"></a>
 ## [0.0.22](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.19...v0.0.22) (2018-03-11)
 
@@ -5,6 +11,7 @@
 ### New
 
 * Adds Jenkins pipeline redpanda library ([abd969d6878ef5a5799ec8324718eb298a33bb29](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/abd969d6878ef5a5799ec8324718eb298a33bb29))
+* Release to version v0.0.22 ([855df3f2e4ff6f6c3b470461dfd4cbc0d8771aaf](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/855df3f2e4ff6f6c3b470461dfd4cbc0d8771aaf))
 
 
 
