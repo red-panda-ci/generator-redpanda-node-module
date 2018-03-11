@@ -1,3 +1,13 @@
+<a name="0.0.25"></a>
+## [0.0.25](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.24...v0.0.25) (2018-03-11)
+
+
+### Fix
+
+* Adds email to notificate faild build ([e0165e951ebbb82092ec11f36cfca1454d5e76e3](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/e0165e951ebbb82092ec11f36cfca1454d5e76e3))
+
+
+
 <a name="0.0.24"></a>
 ## [0.0.24](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.23...v0.0.24) (2018-03-11)
 
@@ -5,6 +15,10 @@
 ### Fix
 
 * Adds permisions for bin/template ([5cc56586d4ed9227e69402b59c9d06989aaabdb6](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/5cc56586d4ed9227e69402b59c9d06989aaabdb6))
+
+### New
+
+* Release to version v0.0.24 ([e32bc94c07676592f4cf034686460d0dcb937962](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/e32bc94c07676592f4cf034686460d0dcb937962))
 
 
 
