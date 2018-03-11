@@ -1,3 +1,17 @@
+<a name="0.0.26"></a>
+## [0.0.26](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.25...v0.0.26) (2018-03-11)
+
+
+### New
+
+* Clear jenkins workspace in Jenkinsfile ([749827e6babe1ad4a6a6143afa984eecc61c19b9](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/749827e6babe1ad4a6a6143afa984eecc61c19b9))
+
+### Update
+
+* Restore user permisions in report files ([2b172602adacda8f4c4d9ce5ecbf78180c080cae](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/2b172602adacda8f4c4d9ce5ecbf78180c080cae))
+
+
+
 <a name="0.0.25"></a>
 ## [0.0.25](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.24...v0.0.25) (2018-03-11)
 
@@ -5,6 +19,10 @@
 ### Fix
 
 * Adds email to notificate faild build ([e0165e951ebbb82092ec11f36cfca1454d5e76e3](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/e0165e951ebbb82092ec11f36cfca1454d5e76e3))
+
+### New
+
+* Release to version v0.0.25 ([d16f0ffdaf56eebc16245473f225f18b1e70e588](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/d16f0ffdaf56eebc16245473f225f18b1e70e588))
 
 
 
