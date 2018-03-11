@@ -1,3 +1,13 @@
+<a name="0.0.22"></a>
+## [0.0.22](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.19...v0.0.22) (2018-03-11)
+
+
+### New
+
+* Adds Jenkins pipeline redpanda library ([abd969d6878ef5a5799ec8324718eb298a33bb29](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/abd969d6878ef5a5799ec8324718eb298a33bb29))
+
+
+
 <a name="0.0.19"></a>
 ## [0.0.19](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.18...v0.0.19) (2017-10-22)
 
@@ -5,6 +15,10 @@
 ### Docs
 
 * Add space between badges ([94741c08d74b7870d7c34a7315f5934d8a526127](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/94741c08d74b7870d7c34a7315f5934d8a526127))
+
+### New
+
+* Release to version v0.0.19 ([237ce2ecac327c2c0ef64493dfebc88976691843](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/237ce2ecac327c2c0ef64493dfebc88976691843))
 
 
 
@@ -84,11 +98,11 @@
 * Add coverge reports in Jenkins buids ([30e26a29125465125af4b0428de682bf9151a560](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/30e26a29125465125af4b0428de682bf9151a560))
 * Add Jenkins integration ([aeb462db79f23ec30e3787b85be68e7d09c95927](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/aeb462db79f23ec30e3787b85be68e7d09c95927))
 * Change coverage path in script test.sh ([c2a278c81feef9be1be488f03dd2dd163db9e967](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/c2a278c81feef9be1be488f03dd2dd163db9e967))
-* Change to relative path in htm publisher  ([d0f35d8dee14f5d1ef8b0e818d7e5396e889c657](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/d0f35d8dee14f5d1ef8b0e818d7e5396e889c657))
+* Change to relative path in htm publisher (Jenkins build) ([d0f35d8dee14f5d1ef8b0e818d7e5396e889c657](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/d0f35d8dee14f5d1ef8b0e818d7e5396e889c657))
 * Enable update git Branches in Jenkins integration ([d568076cebb9a6b8ee6fc442cbb793e32177b0fb](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/d568076cebb9a6b8ee6fc442cbb793e32177b0fb))
-* Fix Error in coverage path  ([19d90015d9d5e7255a0705bad1b219b6c732afff](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/19d90015d9d5e7255a0705bad1b219b6c732afff))
-* Fix error in volumen path on CI/test.sh  ([8db43cba22aac69d8a83b1ce9bd198e71ef8e710](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/8db43cba22aac69d8a83b1ce9bd198e71ef8e710))
-* Fix Error syntax error CI/test.sh  ([199cf1885c9337a54ed169a872b39ab4a5eca9bf](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/199cf1885c9337a54ed169a872b39ab4a5eca9bf))
+* Fix Error in coverage path (Jenkins builds) ([19d90015d9d5e7255a0705bad1b219b6c732afff](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/19d90015d9d5e7255a0705bad1b219b6c732afff))
+* Fix error in volumen path on CI/test.sh (Jenkins build) ([8db43cba22aac69d8a83b1ce9bd198e71ef8e710](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/8db43cba22aac69d8a83b1ce9bd198e71ef8e710))
+* Fix Error syntax error CI/test.sh (Jenkins builds) ([199cf1885c9337a54ed169a872b39ab4a5eca9bf](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/199cf1885c9337a54ed169a872b39ab4a5eca9bf))
 * Fix error: mount path must be absolute in Jenkins build ([b1ba3d919c193683417c1b66019847d6bb1fc6ba](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/b1ba3d919c193683417c1b66019847d6bb1fc6ba))
 * Remove -it instruction in dcker scripts ([19096ed95c46fae38fe82296bc89c2c62d8ab98d](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/19096ed95c46fae38fe82296bc89c2c62d8ab98d))
 
@@ -192,13 +206,13 @@
 
 ### New
 
-* Add changelog generation support  ([361fc8d2d3bb22b966a6f56f7c835e54c6811a68](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/361fc8d2d3bb22b966a6f56f7c835e54c6811a68)), closes [#8](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/8)
-* Add CLI suport with yargs  ([6304b42a80352814b29b81bec023dd6e369a23f4](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/6304b42a80352814b29b81bec023dd6e369a23f4)), closes [#10](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/10)
+* Add changelog generation support (fixes #8) ([361fc8d2d3bb22b966a6f56f7c835e54c6811a68](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/361fc8d2d3bb22b966a6f56f7c835e54c6811a68)), closes [#8](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/8)
+* Add CLI suport with yargs (fixes #10) ([6304b42a80352814b29b81bec023dd6e369a23f4](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/6304b42a80352814b29b81bec023dd6e369a23f4)), closes [#10](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/10)
 * Add contributor covenant code of conduct ([c6855030cd96c55d3d6c780908ab7f7cf1ab990b](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/c6855030cd96c55d3d6c780908ab7f7cf1ab990b))
-* Add Github organization suppor  ([938f32f982057a6013344094f8d393bc5c30c6b2](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/938f32f982057a6013344094f8d393bc5c30c6b2)), closes [#3](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/3)
+* Add Github organization suppor (fixes #3) ([938f32f982057a6013344094f8d393bc5c30c6b2](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/938f32f982057a6013344094f8d393bc5c30c6b2)), closes [#3](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/3)
 * Add Github repo creation ([0c1aef4528a0ce65b16334fc37e6e1997554e960](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/0c1aef4528a0ce65b16334fc37e6e1997554e960))
-* Add SonarQube properties file  ([4ef6aef6cabb793bf032022ba2834bf013f2af2d](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/4ef6aef6cabb793bf032022ba2834bf013f2af2d)), closes [#6](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/6)
-* Add suport for eslint, angular, atom, ember commit convention  ([3eeb8f6acd0e1962d6e13f0eb1aa30ef792aa7ad](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/3eeb8f6acd0e1962d6e13f0eb1aa30ef792aa7ad)), closes [#9](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/9)
+* Add SonarQube properties file (fixes #6) ([4ef6aef6cabb793bf032022ba2834bf013f2af2d](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/4ef6aef6cabb793bf032022ba2834bf013f2af2d)), closes [#6](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/6)
+* Add suport for eslint, angular, atom, ember commit convention (fixes #9) ([3eeb8f6acd0e1962d6e13f0eb1aa30ef792aa7ad](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/3eeb8f6acd0e1962d6e13f0eb1aa30ef792aa7ad)), closes [#9](https://github.com/red-panda-ci/generator-redpanda-node-module/issues/9)
 * Release to version v0.0.1 ([c60d07ae1a47e5dcb2a26acb083992385f22bdb8](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/c60d07ae1a47e5dcb2a26acb083992385f22bdb8))
 
 ### Update
