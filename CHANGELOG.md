@@ -1,6 +1,20 @@
+<a name="0.0.24"></a>
+## [0.0.24](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.23...v0.0.24) (2018-03-11)
+
+
+### Fix
+
+* Adds permisions for bin/template ([5cc56586d4ed9227e69402b59c9d06989aaabdb6](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/5cc56586d4ed9227e69402b59c9d06989aaabdb6))
+
+
+
 <a name="0.0.23"></a>
 ## [0.0.23](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.22...v0.0.23) (2018-03-11)
 
+
+### New
+
+* Release to version v0.0.23 ([bb220c9fa2f8b3b9b3bec635cf821567af703992](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/bb220c9fa2f8b3b9b3bec635cf821567af703992))
 
 
 
