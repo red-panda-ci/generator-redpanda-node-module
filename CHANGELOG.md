@@ -1,3 +1,13 @@
+<a name="0.0.27"></a>
+## [0.0.27](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.26...v0.0.27) (2018-03-11)
+
+
+### Update
+
+* Template sonar props reporter path ([e507158b8307fb042f38a24cdad0232377158cf6](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/e507158b8307fb042f38a24cdad0232377158cf6))
+
+
+
 <a name="0.0.26"></a>
 ## [0.0.26](https://github.com/red-panda-ci/generator-redpanda-node-module/compare/v0.0.25...v0.0.26) (2018-03-11)
 
@@ -5,6 +15,7 @@
 ### New
 
 * Clear jenkins workspace in Jenkinsfile ([749827e6babe1ad4a6a6143afa984eecc61c19b9](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/749827e6babe1ad4a6a6143afa984eecc61c19b9))
+* Release to version v0.0.26 ([8f582566a97da2f9e7414433e57dd0f1d9387ce9](https://github.com/red-panda-ci/generator-redpanda-node-module/commit/8f582566a97da2f9e7414433e57dd0f1d9387ce9))
 
 ### Update
 
