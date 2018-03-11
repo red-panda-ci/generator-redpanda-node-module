@@ -12,6 +12,7 @@ pipeline {
         stage ('Initialize') {
             agent { label 'master' }
             steps  {
+                deleteDir()
                 jplStart(cfg)
             }
         }
